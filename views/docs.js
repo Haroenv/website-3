@@ -2,6 +2,7 @@ var objectValues = require('object-values')
 var wrapper = require('../components/wrapper')
 var format = require('../components/format')
 var html = require('choo/html')
+var docsearch = require('docsearch.js/dist/cdn/docsearch.min.js')
 
 module.exports = wrapper(view)
 
@@ -12,6 +13,9 @@ function view (state, emit) {
 
   return html`
     <div>
+      <div class="x xx xw w100 wmx1100 mxa">
+        <input type="text" id="docsearch" />
+      </div>
       <div class="x xx xw w100 wmx1100 mxa">
         ${renderPages(pages)}
       </div>
