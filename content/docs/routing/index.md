@@ -24,7 +24,7 @@ To perform routing, Choo uses a [Trie](https://en.wikipedia.org/wiki/Trie) data
 structure. This means that our routing is fast, and the order in which routes
 are added doesn't matter.
 
-_Note: It's recommended to read the [views]('/reference/views) chapter first, as
+_Note: It's recommended to read the [views](/docs/views) chapter first, as
 we'll assume that you're already familiar with how views work. This chapter is
 intended to give an overview of how routing works in Choo._
 
@@ -50,7 +50,7 @@ function view () {                 // 4.
 
 1. We need an instance of Choo to add our routes to, so let's create that
    first.
-2. We're going to add a view on the `'/` route. This means that if people
+2. We're going to add a view on the `/` route. This means that if people
    navigate to `oursite.com`, this will be the route that is enabled.
 3. Now that we have our view, we can start rendering our application.
 4. We declare our view at the bottom of the page. Thanks to [scope
@@ -167,8 +167,8 @@ So `?foo=bar&bin=baz` would be exposed as `state.query.foo` and
 `state.query.bin`.
 
 ## Dynamic routing
-Sometimes there will be pages that have the same layout, but different data.
-For example user pages, or blog entries. This requires _dynamic routing_. In
+Sometimes there will be pages that have the same layout but different data,
+such as user pages or blog entries. This requires _dynamic routing_. In
 Choo we have two types of syntax for dynamic routing.
 
 ### Params
@@ -259,7 +259,7 @@ html`
 ```
 
 ## Programmatic Navigation
-Often it's needed to change routes after some event happens. For example,
+It's often necessary to change routes after some event happens. For example,
 someone logs in, and we need to redirect them to the logged in page. We need
 programmatic navigation.
 
@@ -336,9 +336,9 @@ var choo = require('choo')
 var app = choo()
 
 var app = choo()
-app.use((state, emitter) => {            // 1.
-  emitter.on('navigate', (route) => {    // 2.
-    console.log(`Navigated to ${route}`) // 3.
+app.use((state, emitter) => {                  // 1.
+  emitter.on('navigate', () => {               // 2.
+    console.log(`Navigated to ${state.route}`) // 3.
   })
 })
 ```

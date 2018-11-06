@@ -63,10 +63,10 @@ app.use((state, emitter) => {
 ```
 
 #### Notes on DOM loading
-- If you're loading stores dynamically, the `'DOMContentLoaded` event will have
+- If you're loading stores dynamically, the `'DOMContentLoaded'` event will have
   fired by the time you start listening for it. Instead use the
   [document-ready](https://github.com/bendrucker/document-ready) package. It's
-  what Choo uses internally to provide the `DOMContentLoaded` event, so there
+  what Choo uses internally to provide the `'DOMContentLoaded'` event, so there
   is no size cost in using it.
 
 ## Updating state and rendering
@@ -81,7 +81,7 @@ re-render. Renders only happen when the `'render'` event is emitted.
 The biggest benefit of explicit rendering we've found is that it allows storing
 values without triggering renders. This allows every part of the application to
 store their internal bookkeeping values inside the state. In turn this makes
-debugging applications a lot easier, since there are is no private state.
+debugging applications a lot easier, since there is no private state.
 
 ```js
 var choo = require('choo')
